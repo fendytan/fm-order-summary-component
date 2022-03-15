@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  background-color: var(--pale-blue);
+
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.bg__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 400px;
+  background: url(./images/pattern-background-mobile.svg) no-repeat center/cover;
+}
+
+.container {
+  max-width: 350px;
+  margin: auto auto;
+  padding-bottom: 20px;
+
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px hsl(228, 45%, 44%, 0.15);
+}
+
+.container > img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.container h1 {
+  margin: 25px 0;
+  font-weight: 900;
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.container > p {
+  margin: 20px 20px;
+  line-height: 30px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--desaturated-blue);
+}
+
+.container .pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 20px 20px;
+  padding: 25px 20px;
+  background-color: var(--very-pale-blue);
+
+  font-weight: 500;
+
+  border-radius: 10px;
+}
+
+.container .pricing > div {
+  display: flex;
+}
+
+.container .pricing > div img {
+  margin-right: 20px;
+}
+
+.container .pricing > div h4 {
+  font-weight: 900;
+}
+
+.container .pricing > div p {
+  margin-top: 3px;
+  color: var(--desaturated-blue);
+}
+
+.container .pricing button {
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.container .pricing button:hover {
+  color: var(--bright-blue);
+}
+
+.container .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-proceed {
+  width: 310px;
+  margin-bottom: 10px;
+  padding: 18px;
+  background-color: var(--bright-blue);
+  color: white;
+}
+
+.btn-proceed:hover {
+  opacity: 0.8;
+}
+
+.btn-cancel {
+  padding: 18px;
+  background-color: transparent;
+  color: var(--desaturated-blue);
+}
+
+.btn-cancel:hover {
+  color: var(--dark-blue);
+}
+
+.footer {
+  height: 50px;
+  color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.footer a:visited {
+  color: var(--bright-blue);
+}
+
+.fa-github {
+  color: var(--bright-blue);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+  margin-left: 8px;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+@media (min-width: 768px) {
+  .bg__image {
+    height: 50vh;
+    background: url(./images/pattern-background-desktop.svg) no-repeat center/cover;
+  }
+
+  .container {
+    max-width: 500px;
+  }
+
+  .btn-proceed {
+    width: 460px;
+  }
+}
